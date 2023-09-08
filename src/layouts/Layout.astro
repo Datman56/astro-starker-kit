@@ -1,12 +1,15 @@
 ---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
 interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
 ---
-<!-- HTML Section -->
-<!doctype html>
+
+<!-- HTML Section --><!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -17,7 +20,11 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<div id="wrapper">
+			<Navbar />
+			<slot />
+		</div>
+		<Footer />
 	</body>
 </html>
 
@@ -31,8 +38,38 @@ const { title } = Astro.props;
 	}
 	:root {
 		font-family: system-ui, sans-serif;
+		font-size: 16px;
+
+		--color-primary: #5055f4;
+		--color-secondary: #37d7b4;
+		--color-accent: #9596b7;
+		--color-black: #2c2c3b;
+		--color-gray: #5f5f74;
+		--color-white: #f2f2f9;
 	}
-	html, 
+	html,
 	body {
+		color: var(--color-black);
 	}
+	#warpper {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+	/* Simple tags */
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+	button {
+		border: none;
+		background: none;
+		cursor: pointer;
+	}
+	ul {
+		list-style: none;
+	}
+	/* h1,h2,h3,h4,h5,h6 {
+		font-weight: 500;
+	} */
 </style>

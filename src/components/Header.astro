@@ -1,0 +1,65 @@
+---
+---
+<!-- html -->
+<header>
+    <div class="container">
+        <div class="text-wrapper">
+            <!-- headline -->
+    <h1>Awesome <span class="color-gradient">titles</span></h1>
+    <!-- subline -->
+    <h2>With an amazing tools for your site</h2>
+        </div>
+    </div>
+</header>
+
+<style>
+    header {
+        /* background-image: url({{ site.baseurl }}/assets/img/header.jpg); */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: calc(100vh - 80px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .container {
+        max-width: 960px;
+        width: 100%;
+        padding: 1rem;
+    }
+    .text-wrapper {
+        max-width: 800px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 5px;
+        text-align: left;
+    }
+    @media (min-width: 768px) {
+        .text-wrapper {
+            text-align: center;
+        }
+    }
+    .text-wrapper h1 {
+        font-size: 5rem;
+        font-weight: 500;
+        line-height: 1;
+        margin: 0;
+        padding: 0;
+        text-transform: capitalize;
+        color: var(--color-black);
+    }
+    .text-wrapper h2 {
+        font-size: 2rem;
+        font-weight: 300;
+        line-height: 1;
+        margin: 0;
+        padding: 0;
+        color: var(--color-gray);
+    }
+    .text-wrapper .color-gradient {
+        font-weight: 600;
+        background-image: linear-gradient(90deg, #ff00ff, #4b0082);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+</style>
